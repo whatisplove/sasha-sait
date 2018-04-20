@@ -1,0 +1,135 @@
+html,
+body,
+.full-screen {
+  height: 100%;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+body {
+  margin: 0;
+}
+
+.full-screen {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.full-screen > .parent {
+  flex: 1 1 auto;
+  display: flex;
+  overflow: hidden;
+}
+
+.full-screen > .parent > * {
+  flex: 0 0 50%;
+  overflow: scroll;
+}
+
+.full-screen > .parent > .menu {
+/*   flex: 1 1 auto; */
+  /*   display: flex;
+  flex: 1;
+  flex-direction: column; */
+  overflow: hidden;
+  border-right: 1px solid #979797;
+}
+
+.menu > div {
+  border-bottom: 1px solid #979797;
+  padding: 1.3vw;
+}
+
+.menu > div:hover, .menu > div.active {
+  background: rgba(74,144,226,0.60);
+}
+
+.menu a {
+  color: #000000;
+  letter-spacing: 0.44px;
+  text-decoration: none;
+}
+
+.menu .title, .menu .title:hover {
+  max-width: 100%;
+  background: rgba(216,216,216,0.48);
+}
+
+@media (min-width: 0px) and (max-width: 575.98px) {
+
+  /* a, h1 {
+    font-size: 2em !important;
+  } */
+
+  /* mobile rules: */
+  .parent > .menu {
+    display: none;
+  }
+
+  .menu > div {
+    padding: .8em 0;
+  }
+
+  /* for content to be full screen wide */
+  .full-screen > .parent > * {
+    flex: 0 0 100%;
+  }
+
+  a, h1 {
+    font-size: 1.5em !important;
+    padding: .8em 0 .5em .8em !important;
+  }
+
+  p {
+    font-size: 1.3em !important;
+    padding-left: .8em !important;
+  }
+
+  .content > .back {
+    border-bottom: 1px solid #979797;
+    padding: .8em 0;
+    background: rgba(216,216,216,0.48);
+  }
+
+  .content > .back a, .mobile-title h1 {
+    font-size: 2em;
+    color: black;
+  }
+
+}
+
+@media (min-width: 575.99px) {
+  .content > .back, .mobile-title {
+    display: none;
+  }
+}
+
+/* Typo */
+
+a, h1 {
+  font-size: 2.7vw;
+  line-height: normal;
+  text-decoration: none;
+}
+
+h1 {
+  padding: 1.5vw 0 1vw 1.3vw;
+}
+
+p {
+  font-size: 1.4vw;
+  padding: 1.3vw;
+  font-weight: 300;
+  line-height: normal;
+}
+
+img {
+  height: auto;
+  width: 100%;
+  border-top: 1px solid rgba(0,0,0,.167);
+  border-bottom: 1px solid rgba(0,0,0,.167);
+}
+
+img ~ img {
+  border-top: none;
+}
